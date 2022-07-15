@@ -14,6 +14,8 @@ public class ModificationProperty {
     private List<MetaData> metaDataList = new ArrayList<>();
     private List<MetaData> deleteMetaDataList = new ArrayList<>();
 
+    private List<Activity> activityList = new ArrayList<>();
+
     private List<AttributeItem> applicationAttributeList = new ArrayList<>();
     private List<AttributeItem> manifestAttributeList = new ArrayList<>();
 
@@ -62,6 +64,14 @@ public class ModificationProperty {
         return this;
     }
 
+    public List<Activity> getActivityList() {
+        return activityList;
+    }
+    public ModificationProperty addAcitivity(String name){
+        this.activityList.add(new Activity(name, "", ""));
+        return this;
+    }
+
     public static class MetaData {
         private String name;
         private String value;
@@ -83,4 +93,29 @@ public class ModificationProperty {
             return value;
         }
     }
+
+    public static class Activity {
+        private String name;
+        private String exported;
+        private String permission;
+
+        public Activity (String name, String exported, String permission){
+            this.name = name ;
+            this.exported = exported;
+            this.permission = permission;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public String getExported() {
+            return exported;
+        }
+
+        public String getPermission() {
+            return permission;
+        }
+    }
+
 }

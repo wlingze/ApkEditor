@@ -178,9 +178,6 @@ public class ManifestEditorMain extends BaseCommand {
 
                 // delete the keystore file finally
                 File keyStoreFile = new File(keyStoreFilePath);
-                if (keyStoreFile.exists()) {
-                    keyStoreFile.delete();
-                }
             }
         }
     }

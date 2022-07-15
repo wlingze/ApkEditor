@@ -4,6 +4,7 @@ import com.wind.meditor.property.ModificationProperty;
 
 import java.util.List;
 
+import com.wind.meditor.utils.Log;
 import pxb.android.axml.NodeVisitor;
 
 /**
@@ -21,6 +22,8 @@ public class DeleteMetaDataVisitor extends NodeVisitor {
 
     @Override
     public void attr(String ns, String name, int resourceId, int type, Object obj) {
+        Log.d("DeleteMetaDataVisitor attr  --> ns = " + ns + " name = " +
+                name + " resourceId=" + resourceId + " obj = " + obj);
         if ("name".equals(name) && !shouldDeleteNode) {
             for (ModificationProperty.MetaData data : deleteMetaDataList) {
                 if (data.getName() != null && data.getName().equals(obj)) {

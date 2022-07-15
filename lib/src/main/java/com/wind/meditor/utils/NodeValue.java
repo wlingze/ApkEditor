@@ -65,5 +65,14 @@ public final class NodeValue {
         public static final String PROCESS="process";
     }
 
+    public static final class Activity {
+        public static final String TAG_NAME = "activity";
+
+        public static final String EXPORTED = "exported";
+        public static final String NAME = "name";
+        public static final String PERMISSION = "permission";
+        public static final String THEME = "theme";
+    }
+
 
 }

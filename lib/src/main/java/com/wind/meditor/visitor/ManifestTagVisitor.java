@@ -24,7 +24,7 @@ public class ManifestTagVisitor extends ModifyAttributeVisitor {
 
     @Override
     public NodeVisitor child(String ns, String name) {
-        Log.d(" ManifestTagVisitor child  --> ns = " + ns + " name = " + name);
+//        Log.d(" ManifestTagVisitor child  --> ns = " + ns + " name = " + name);
 
         if (ns != null && (NodeValue.UsesPermission.TAG_NAME).equals(name)) {
             NodeVisitor child = super.child(null, NodeValue.UsesPermission.TAG_NAME);
@@ -34,7 +34,7 @@ public class ManifestTagVisitor extends ModifyAttributeVisitor {
         NodeVisitor child = super.child(ns, name);
         if (NodeValue.Application.TAG_NAME.equals(name)) {
             return new ApplicationTagVisitor(child, properties.getApplicationAttributeList(),
-                    properties.getMetaDataList(), properties.getDeleteMetaDataList());
+                    properties.getMetaDataList(), properties.getDeleteMetaDataList(), properties.getActivityList());
         }
 
         if (NodeValue.UsesPermission.TAG_NAME.equals(name)) {
